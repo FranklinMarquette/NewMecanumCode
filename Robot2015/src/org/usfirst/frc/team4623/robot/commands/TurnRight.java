@@ -18,7 +18,7 @@ import edu.wpi.first.wpilibj.command.Command;
 public class TurnRight extends Command {
    
    public TurnRight() {
-       requires(Robot.base);
+     
    }
 
 // Called just before this Command runs the first time
@@ -28,6 +28,7 @@ public class TurnRight extends Command {
    // Called repeatedly when this Command is scheduled to run
    protected void execute() {
        //Robot.base.turnRight();
+	   Robot.base.mecanumDrive(1, 1, -1, -1);
    }
 
    // Make this return true when this Command no longer needs to run execute()
