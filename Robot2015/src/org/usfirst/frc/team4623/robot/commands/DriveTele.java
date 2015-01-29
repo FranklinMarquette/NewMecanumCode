@@ -27,10 +27,10 @@ public class DriveTele extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         Robot.base.mecanumDrive(
-                (XBox.LEFTJOY_X+XBox.LEFTJOY_Y)/2,
-                (XBox.LEFTJOY_Y-XBox.LEFTJOY_X)/2,
-                -(XBox.LEFTJOY_Y-XBox.LEFTJOY_X)/2,
-                -(XBox.LEFTJOY_X+XBox.LEFTJOY_Y)/2);
+                (Robot.oi.joystick.getLeftJoyX()+Robot.oi.joystick.getLeftJoyY())/2,
+                (Robot.oi.joystick.getLeftJoyY()-Robot.oi.joystick.getLeftJoyX())/2,
+                -(Robot.oi.joystick.getLeftJoyY()-Robot.oi.joystick.getLeftJoyX())/2,
+                -(Robot.oi.joystick.getLeftJoyX()+Robot.oi.joystick.getLeftJoyY())/2);
     }
     
 

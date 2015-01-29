@@ -1,6 +1,8 @@
 package org.usfirst.frc.team4623.robot.subsystems;
 
 
+import org.usfirst.frc.team4623.robot.commands.DriveTele;
+
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.Jaguar;
@@ -23,7 +25,7 @@ public class Chassis extends Subsystem {
     SpeedController rearRightMotor = new Jaguar(3);
     
 
-public void turnRight() {
+    /*public void turnRight() {
     if(XBox.RIGHT_TRIGGER == 1) {
        mecanumDrive(-1, -1, -1, -1);
      }
@@ -51,15 +53,15 @@ public void turnLeft() {
                 rspeed = rspeed -.1;
             }
         }
-      }
+      }*/
     
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        //setDefaultCommand(new DriveTele());
+        setDefaultCommand(new DriveTele());
     }
     
     public Chassis(){
-        drive = new RobotDrive(1, 2, 3, 4);
+        drive = new RobotDrive(0, 1, 2, 3);
         drive.setSafetyEnabled(false);
     }
     
