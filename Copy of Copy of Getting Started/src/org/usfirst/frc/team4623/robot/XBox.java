@@ -1,4 +1,4 @@
-package org.usfirst.frc.team4623.robot.subsystems;
+package org.usfirst.frc.team4623.robot;
 
 
 import edu.wpi.first.wpilibj.Joystick;
@@ -90,5 +90,3 @@ public class XBox extends Joystick{
         return getRawAxis(TRIGGER);
     }
 }
-
-
