@@ -14,21 +14,24 @@ public class XBox extends Joystick{
     }
     
     public static final int 
-            A_BUTTON = 1,
-            B_BUTTON = 2,
-            X_BUTTON = 3,
-            Y_BUTTON = 4,
-            START_BUTTON = 8,
-            BACK_BUTTON = 7,
-            LS_BUTTON = 9,
-            RS_BUTTON = 10,
-            RB_BUTTON = 6,
-            LB_BUTTON = 5,
-            LEFTJOY_Y = 2,
-            LEFTJOY_X = 1,
+            //buttons
+            A_BUTTON = 0,
+            B_BUTTON = 1,
+            X_BUTTON = 2,
+            Y_BUTTON = 3,
+            START_BUTTON = 7,
+            BACK_BUTTON = 6,
+            RS_BUTTON = 9,
+            LS_BUTTON = 8,
+            RB_BUTTON = 5,
+            LB_BUTTON = 4,
+            //axes
+            LEFTJOY_Y = 1,
+            LEFTJOY_X = 0,
             RIGHTJOY_Y = 5,
             RIGHTJOY_X = 4,
-            TRIGGER = 3;
+            LEFT_TRIGGER = 2,
+            RIGHT_TRIGGER = 3;
     
     public boolean getButtonA() {
      return getRawButton(A_BUTTON);
@@ -86,7 +89,11 @@ public class XBox extends Joystick{
         return getRawAxis(RIGHTJOY_X);
     }
     
-    public double getRealTrigger() {
-        return getRawAxis(TRIGGER);
+    public double getRightTrigger() {
+        return getRawAxis(RIGHT_TRIGGER);
+    }
+    
+    public double getLeftTrigger() {
+    	return getRawAxis(LEFT_TRIGGER);
     }
 }

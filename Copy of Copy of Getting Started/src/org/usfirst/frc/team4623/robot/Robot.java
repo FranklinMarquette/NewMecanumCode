@@ -33,7 +33,7 @@ public class Robot extends IterativeRobot {
      * This function is called periodically during autonomous
      */
     public void autonomousPeriodic() {
-    	//mecanumDrive(.3, .3, -.3, -.3);//forwards
+    	CommandBase.mecanum.mecanumDrive(.3, .3, -.3, -.3);//forwards
     	//mecanumDrive(-.3, -.3, .3, .3);//backwards
     	//mecanumDrive(-.3, -.3, -.3, -.3);//turn left
     	//mecanumDrive(.3, .3, .3, .3);//turn right

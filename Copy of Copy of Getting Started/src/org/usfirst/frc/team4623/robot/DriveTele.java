@@ -14,25 +14,12 @@ public class DriveTele extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	CommandBase.mecanum.setSpeed(.3);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	if(CommandBase.stick.getLeftJoyY() > 0) {
-    		CommandBase.mecanum.mecanumDrive(1, 1, -1, -1);//forward
-    	}
-    	
-    	if(CommandBase.stick.getLeftJoyY() < 0) {
-    		CommandBase.mecanum.mecanumDrive(-1, -1, 1, 1);//backward
-    	}
-    	
-    	if (CommandBase.stick.getLeftJoyX() > 0) {
-    		CommandBase.mecanum.mecanumDrive(1, 1, 1, 1);//right turn
-    	}
-    	
-    	if (CommandBase.stick.getLeftJoyX() < 0) {
-    		CommandBase.mecanum.mecanumDrive(-1, -1, -1, -1);//left turn
-    	}
+    	CommandBase.mecanum.driveTele(CommandBase.stick.getLeftJoyY(), CommandBase.stick.getLeftJoyX());
     }
 
     // Make this return true when this Command no longer needs to run execute()

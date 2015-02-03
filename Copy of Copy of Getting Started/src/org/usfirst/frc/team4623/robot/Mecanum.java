@@ -35,5 +35,13 @@ public class Mecanum extends Subsystem {
         frontRightMotor.set(FR);
         rearRightMotor.set(RR);
     }
+    
+    public void driveTele(double moveValue, double turnValue){
+        drive.arcadeDrive(moveValue, turnValue);
+    }
+    
+    public void setSpeed(double speed){
+        drive.setMaxOutput(speed);
+    }
 }
 
