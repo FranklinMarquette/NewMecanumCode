@@ -72,10 +72,10 @@ public class Robot extends IterativeRobot {
     }
     
     public void mecanumDrive(double FL, double RL, double FR, double RR)   {
-        frontLeftMotor.set(FL);
-        rearLeftMotor.set(RL);
-        frontRightMotor.set(FR);
-        rearRightMotor.set(RR);
+        frontLeftMotor.set(-FL);
+        rearLeftMotor.set(-RL);
+        frontRightMotor.set(-FR);
+        rearRightMotor.set(-RR);
     }
     
 }
