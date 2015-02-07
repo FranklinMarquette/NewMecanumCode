@@ -15,16 +15,16 @@ public class XBox extends Joystick{
     
     public static final int 
             //buttons
-            A_BUTTON = 0,
-            B_BUTTON = 1,
+            A_BUTTON = 1,
+            Y_BUTTON = 4,
             X_BUTTON = 2,
-            Y_BUTTON = 3,
-            START_BUTTON = 7,
+            B_BUTTON = 3,
+            START_BUTTON = 9,
             BACK_BUTTON = 6,
-            RS_BUTTON = 9,
+            RS_BUTTON = 7,
             LS_BUTTON = 8,
             RB_BUTTON = 5,
-            LB_BUTTON = 4,
+            LB_BUTTON = 0,
             //axes
             LEFTJOY_Y = 1,
             LEFTJOY_X = 0,

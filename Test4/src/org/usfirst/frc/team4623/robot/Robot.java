@@ -2,14 +2,14 @@
 package org.usfirst.frc.team4623.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.Jaguar;
-import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4623.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4623.robot.subsystems.ExampleSubsystem;
+import org.usfirst.frc.team4623.robot.subsystems.Lifter;
+import org.usfirst.frc.team4623.robot.subsystems.Mecanum;
 import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
 
 /**
@@ -20,13 +20,12 @@ import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
  * directory.
  */
 public class Robot extends IterativeRobot {
-      SpeedController frontLeftMotor = new Jaguar(0);
-      SpeedController frontRightMotor = new Jaguar(1);
-      SpeedController rearLeftMotor = new Jaguar(2);
-      SpeedController rearRightMotor = new Jaguar(3);
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final Pnuematics pn = new Pnuematics();
+	public static final Lifter lift = new Lifter();
+	public static final Mecanum mec = new Mecanum();
+	
 	public static OI oi;
 
     Command autonomousCommand;
@@ -82,11 +81,7 @@ public class Robot extends IterativeRobot {
     public void teleopPeriodic() {
         Scheduler.getInstance().run();
         
-        mecanumDrive(
-                (oi.stick.getLeftJoyX()+oi.stick.getLeftJoyY())/2,
-                (oi.stick.getLeftJoyY()-oi.stick.getLeftJoyX())/2,
-                -(oi.stick.getLeftJoyY()-oi.stick.getLeftJoyX())/2,
-                -(oi.stick.getLeftJoyX()+oi.stick.getLeftJoyY())/2);
+        
     }
     
     /**
@@ -96,10 +91,4 @@ public class Robot extends IterativeRobot {
         LiveWindow.run();
     }
     
-    public void mecanumDrive(double FL, double RL, double FR, double RR)   {
-        frontLeftMotor.set(-FL);
-        rearLeftMotor.set(-RL);
-        frontRightMotor.set(-FR);
-        rearRightMotor.set(-RR);
-    }
 }

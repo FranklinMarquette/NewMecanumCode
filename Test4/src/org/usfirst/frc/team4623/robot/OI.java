@@ -3,8 +3,14 @@ package org.usfirst.frc.team4623.robot;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
+import org.usfirst.frc.team4623.robot.commands.baseStop;
 import org.usfirst.frc.team4623.robot.commands.extend;
+import org.usfirst.frc.team4623.robot.commands.liftStop;
 import org.usfirst.frc.team4623.robot.commands.retract;
+import org.usfirst.frc.team4623.robot.commands.raise;
+import org.usfirst.frc.team4623.robot.commands.lower;
+import org.usfirst.frc.team4623.robot.commands.rightTurn;
+import org.usfirst.frc.team4623.robot.commands.leftTurn;
 import org.usfirst.frc.team4623.robot.subsystems.XBox;
 
 /**
@@ -44,10 +50,33 @@ public class OI {
 	private Button extend = new JoystickButton(stick, XBox.X_BUTTON);
 	private Button retract = new JoystickButton(stick, XBox.Y_BUTTON);
 	
+	private Button raise = new JoystickButton(stick, XBox.LS_BUTTON);
+	private Button raiseStop = new JoystickButton(stick, XBox.LS_BUTTON);
+	private Button lower = new JoystickButton(stick, XBox.RS_BUTTON);
+	private Button lowerStop = new JoystickButton(stick, XBox.RS_BUTTON);
+	
+	private Button leftTurn = new JoystickButton(stick, XBox.LB_BUTTON);
+	private Button rightTurn = new JoystickButton(stick, XBox.RB_BUTTON);
+	private Button stop = new JoystickButton(stick, XBox.LB_BUTTON);
+	private Button stop2 = new JoystickButton(stick, XBox.RB_BUTTON);
+	
 	public OI() {
 		
 		extend.whenPressed(new extend());
 		retract.whenPressed(new retract());
+		
+		raise.whenPressed(new raise());
+		lower.whenPressed(new lower());
+		
+		raiseStop.whenReleased(new liftStop());
+		lowerStop.whenReleased(new liftStop());
+		
+		
+		leftTurn.whenPressed(new leftTurn());
+		rightTurn.whenPressed(new rightTurn());
+		
+		stop.whenReleased(new baseStop());
+		stop2.whenReleased(new baseStop());
 		
 		}
 }
