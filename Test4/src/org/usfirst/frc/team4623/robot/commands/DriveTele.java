@@ -16,7 +16,7 @@ public class DriveTele extends Command {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     	requires(Robot.mec);
-    }
+    	   	}
 
     // Called just before this Command runs the first time
     protected void initialize() {
@@ -29,6 +29,14 @@ public class DriveTele extends Command {
                 (oi.stick.getLeftJoyY()-oi.stick.getLeftJoyX())/2,
                 -(oi.stick.getLeftJoyY()-oi.stick.getLeftJoyX())/2,
                 -(oi.stick.getLeftJoyX()+oi.stick.getLeftJoyY())/2);
+    	
+    	if(oi.stick.getRawButton(5)) {
+    		Robot.mec.turnLeft();
+    	}
+    	
+    	if(oi.stick.getRawButton(6)){
+    		Robot.mec.turnRight();
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()

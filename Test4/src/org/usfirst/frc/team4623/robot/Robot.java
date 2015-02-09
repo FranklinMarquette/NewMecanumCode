@@ -11,6 +11,7 @@ import org.usfirst.frc.team4623.robot.subsystems.ExampleSubsystem;
 import org.usfirst.frc.team4623.robot.subsystems.Lifter;
 import org.usfirst.frc.team4623.robot.subsystems.Mecanum;
 import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
+import org.usfirst.frc.team4623.robot.subsystems.XBox;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -25,6 +26,7 @@ public class Robot extends IterativeRobot {
 	public static final Pnuematics pn = new Pnuematics();
 	public static final Lifter lift = new Lifter();
 	public static final Mecanum mec = new Mecanum();
+	public XBox stick = new XBox(0);
 	
 	public static OI oi;
 
