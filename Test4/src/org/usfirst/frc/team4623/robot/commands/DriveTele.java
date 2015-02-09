@@ -3,6 +3,7 @@ package org.usfirst.frc.team4623.robot.commands;
 import org.usfirst.frc.team4623.robot.OI;
 import org.usfirst.frc.team4623.robot.Robot;
 
+import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -11,7 +12,10 @@ import edu.wpi.first.wpilibj.command.Command;
 public class DriveTele extends Command {
 	
 	public static OI oi = new OI();
-
+	
+	DigitalInput limitSwitch = new DigitalInput(1);
+    DigitalInput limitSwitch2 = new DigitalInput(2);
+	
     public DriveTele() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
@@ -37,7 +41,19 @@ public class DriveTele extends Command {
     	if(oi.stick.getRawButton(6)){
     		Robot.mec.turnRight();
     	}
-    }
+    	
+    	if(oi.stick.getRawButton(9) && limitSwitch.get()) {
+    		Robot.mec.down();
+    	}
+    	
+    	if(oi.stick.getRawButton(10) && limitSwitch2.get()) {
+    		Robot.mec.up();
+    	}
+    	
+    	else {
+    		Robot.mec.stopLift();
+    	}
+    } 
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
