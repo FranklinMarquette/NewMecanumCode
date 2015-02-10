@@ -8,7 +8,6 @@ import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 
 import org.usfirst.frc.team4623.robot.commands.ExampleCommand;
 import org.usfirst.frc.team4623.robot.subsystems.ExampleSubsystem;
-import org.usfirst.frc.team4623.robot.subsystems.Lifter;
 import org.usfirst.frc.team4623.robot.subsystems.Mecanum;
 import org.usfirst.frc.team4623.robot.subsystems.Pnuematics;
 import org.usfirst.frc.team4623.robot.subsystems.XBox;
@@ -24,7 +23,6 @@ public class Robot extends IterativeRobot {
 
 	public static final ExampleSubsystem exampleSubsystem = new ExampleSubsystem();
 	public static final Pnuematics pn = new Pnuematics();
-	public static final Lifter lift = new Lifter();
 	public static final Mecanum mec = new Mecanum();
 	public XBox stick = new XBox(0);
 	
@@ -56,6 +54,7 @@ public class Robot extends IterativeRobot {
      */
     public void autonomousPeriodic() {
         Scheduler.getInstance().run();
+        
     }
 
     public void teleopInit() {

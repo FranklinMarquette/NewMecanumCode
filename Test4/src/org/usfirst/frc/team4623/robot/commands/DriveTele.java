@@ -13,8 +13,8 @@ public class DriveTele extends Command {
 	
 	public static OI oi = new OI();
 	
-	DigitalInput limitSwitch = new DigitalInput(1);
-    DigitalInput limitSwitch2 = new DigitalInput(2);
+	DigitalInput limitSwitch = new DigitalInput(2);
+    DigitalInput limitSwitch2 = new DigitalInput(1);
 	
     public DriveTele() {
         // Use requires() here to declare subsystem dependencies
@@ -34,11 +34,11 @@ public class DriveTele extends Command {
                 -(oi.stick.getLeftJoyY()-oi.stick.getLeftJoyX())/2,
                 -(oi.stick.getLeftJoyX()+oi.stick.getLeftJoyY())/2);
     	
-    	if(oi.stick.getRawButton(5)) {
+    	if(oi.stick.getRawButton(6)) {
     		Robot.mec.turnLeft();
     	}
     	
-    	if(oi.stick.getRawButton(6)){
+    	else if(oi.stick.getRawButton(5)){
     		Robot.mec.turnRight();
     	}
     	
@@ -46,7 +46,7 @@ public class DriveTele extends Command {
     		Robot.mec.down();
     	}
     	
-    	if(oi.stick.getRawButton(10) && limitSwitch2.get()) {
+    	else if(oi.stick.getRawButton(10) && limitSwitch2.get()) {
     		Robot.mec.up();
     	}
     	

@@ -29,10 +29,10 @@ public class Mecanum extends Subsystem {
     }
     
     public void mecanumDrive(double FL, double RL, double FR, double RR)   {
-        frontLeftMotor.set(-FL);
-        rearLeftMotor.set(-RL);
-        frontRightMotor.set(-FR);
-        rearRightMotor.set(-RR);
+        frontLeftMotor.set(-FL+.5);
+        rearLeftMotor.set(-RL+.5);
+        frontRightMotor.set(-FR+.5);
+        rearRightMotor.set(-RR+.5);
     }
     
     public void turnLeft() {
