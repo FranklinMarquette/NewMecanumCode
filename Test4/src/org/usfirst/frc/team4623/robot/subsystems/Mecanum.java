@@ -36,11 +36,11 @@ public class Mecanum extends Subsystem {
     }
     
     public void turnLeft() {
-    	mecanumDrive(-1, -1, -1, -1);
+    	mecanumDrive(-.5, -.5, -.5, -.5);
     }
     
     public void turnRight() {
-    	mecanumDrive(1, 1, 1, 1);
+    	mecanumDrive(.5, .5, .5, .5);
     }
     
     public void stop() {
