@@ -17,7 +17,7 @@ public class Mecanum extends Subsystem {
 	
 	SpeedController frontLeftMotor = new Jaguar(0);
     SpeedController frontRightMotor = new Jaguar(1);
-    SpeedController rearLeftMotor = new Jaguar(2);
+    SpeedController rearLeftMotor = new Talon(2);
     SpeedController rearRightMotor = new Jaguar(3);
     
     SpeedController win = new Talon(4);
@@ -29,10 +29,10 @@ public class Mecanum extends Subsystem {
     }
     
     public void mecanumDrive(double FL, double RL, double FR, double RR)   {
-        frontLeftMotor.set(-FL+.5);
-        rearLeftMotor.set(-RL+.5);
-        frontRightMotor.set(-FR+.5);
-        rearRightMotor.set(-RR+.5);
+        frontLeftMotor.set(-FL);
+        rearLeftMotor.set(-RL);
+        frontRightMotor.set(-FR);
+        rearRightMotor.set(-RR);
     }
     
     public void turnLeft() {
