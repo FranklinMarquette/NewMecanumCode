@@ -42,11 +42,11 @@ public class DriveTele extends Command {
     		Robot.mec.turnRight();
     	}
     	
-    	if(oi.stick.getRawButton(9) && limitSwitch.get()) {
+    	if(oi.stick.getRawButton(1) && limitSwitch.get()) {
     		Robot.mec.down();
     	}
     	
-    	else if(oi.stick.getRawButton(10) && limitSwitch2.get()) {
+    	else if(oi.stick.getRawButton(4) && limitSwitch2.get()) {
     		Robot.mec.up();
     	}
     	
