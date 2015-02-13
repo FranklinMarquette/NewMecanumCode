@@ -23,16 +23,21 @@ public class Auto extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Timer.delay(.5);
     	Robot.mec.up();
-    	Timer.delay(2);
-    	Robot.mec.mecanumDrive(.3, -.3, .3, -.3);
-    	Timer.delay(3);
+    	Timer.delay(.5);
+    	Robot.mec.stopLift();
+    	Timer.delay(.3);
+    	Robot.mec.turnLeft();
+    	Timer.delay(1);
     	Robot.mec.mecanumDrive(0, 0, 0, 0);
-    	Timer.delay(.2);
-    	Robot.mec.mecanumDrive(.3, .3, -.3, -.3);
-    	Timer.delay(3);
+    	Timer.delay(.5);
+    	Robot.mec.mecanumDrive(-.5, -.5, .5, .5);
+    	Timer.delay(2.5);
     	Robot.mec.mecanumDrive(0, 0, 0, 0);
-    	Timer.delay(.2);
+    	Timer.delay(.5);
+        Robot.mec.down();
+        Timer.delay(.3);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -28,7 +28,7 @@ public class Mecanum extends Subsystem {
         setDefaultCommand(new DriveTele());
     }
     
-    public void mecanumDrive(double FL, double RL, double FR, double RR)   {
+   public void mecanumDrive(double FL, double RL, double FR, double RR)   {
         frontLeftMotor.set(-FL);
         rearLeftMotor.set(-RL);
         frontRightMotor.set(-FR);
@@ -37,6 +37,10 @@ public class Mecanum extends Subsystem {
     
     public void turnLeft() {
     	mecanumDrive(-.5, -.5, -.5, -.5);
+    }
+    
+    public void turnRight2() {
+    	mecanumDrive(.3, .3, .3, -.3);
     }
     
     public void turnRight() {

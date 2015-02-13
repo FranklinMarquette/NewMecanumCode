@@ -11,11 +11,11 @@ import edu.wpi.first.wpilibj.command.Command;
  */
 public class DriveTele extends Command {
 	
-	public static OI oi = new OI();
-	
-	DigitalInput limitSwitch = new DigitalInput(2);
-    DigitalInput limitSwitch2 = new DigitalInput(1);
-	
+	public DigitalInput limitSwitch = new DigitalInput(2);
+    public DigitalInput limitSwitch2 = new DigitalInput(1);
+    
+    public OI oi = new OI();
+    
     public DriveTele() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);

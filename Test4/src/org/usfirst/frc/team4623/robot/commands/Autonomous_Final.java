@@ -25,7 +25,9 @@ public class Autonomous_Final extends CommandGroup {
         // a CommandGroup containing them would require both the chassis and the
         // arm.
     	addSequential(new extend());
-        addSequential(new Auto());
+    	addSequential(new Auto());
+        //addSequential(new Auto2());
         addSequential(new retract());
+        addSequential(new AutoBack());
     }
 }
