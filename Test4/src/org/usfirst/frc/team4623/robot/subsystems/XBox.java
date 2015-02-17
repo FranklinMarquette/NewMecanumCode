@@ -78,7 +78,7 @@ public class XBox extends Joystick{
     }
     
     public double getLeftJoyX() {
-        return getRawAxis(LEFTJOY_X);
+        return -getRawAxis(LEFTJOY_X);
     }
     
     public double getRightJoyY() {

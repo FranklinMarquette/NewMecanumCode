@@ -36,8 +36,6 @@ public class Auto extends Command {
     	Timer.delay(2.5);
     	Robot.mec.mecanumDrive(0, 0, 0, 0);
     	Timer.delay(.5);
-        Robot.mec.down();
-        Timer.delay(.3);
     }
 
     // Make this return true when this Command no longer needs to run execute()
